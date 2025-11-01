@@ -1,31 +1,29 @@
 package com.projetoweb.trabalhoapi.controller.dto;
 
 
-// 1. Importar List e ArrayList
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class TurmaDto {
 
-    private Long id; // MUDANÇA 1: int para Long
+    private Long id; 
 
     private String nome;
     private String curso;
     private String periodo;
 
-    // MUDANÇA 2: Adicionar a lista de AlunoDto
-    // É isso que vai receber o JSON do Requisito 1
+
     private List<AlunoDto> alunos = new ArrayList<>();
 
 
-    // --- Getters e Setters ---
-    // (Atualizar o get/set do ID)
 
-    public Long getId() { // MUDANÇA 3
+
+    public Long getId() { 
         return id;
     }
 
-    public void setId(Long id) { // MUDANÇA 4
+    public void setId(Long id) { 
         this.id = id;
     }
 
@@ -53,7 +51,7 @@ public class TurmaDto {
         this.periodo = periodo;
     }
 
-    // MUDANÇA 5: Adicionar getters e setters para a lista de alunos
+
     public List<AlunoDto> getAlunos() {
         return alunos;
     }

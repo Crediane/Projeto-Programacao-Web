@@ -1,17 +1,27 @@
 package com.projetoweb.trabalhoapi.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference; // 1. Importar
-import jakarta.persistence.*;
-import java.util.ArrayList; // 2. Importar
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference; 
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "turma")
 public class TurmaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // MUDANÇA 1
-    private Long id; // MUDANÇA 2
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private Long id; 
 
     @Column(name = "nome_da_turma")
     private String nome;
@@ -19,22 +29,20 @@ public class TurmaEntity {
     @Column(name = "curso")
     private String curso;
 
-    @Column(name = "perido_da_turma") // Corrigindo: 'periodo_da_turma'
+    @Column(name = "perido_da_turma") 
     private String periodo;
 
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference // 3. Adicionar para evitar loop no JSON
-    private List<AlunoEntity> alunos = new ArrayList<>(); // MUDANÇA 3
+    @JsonManagedReference 
+    private List<AlunoEntity> alunos = new ArrayList<>(); 
 
     
-    // --- Getters e Setters ---
-    // (Lembre-se de atualizar o get/set do ID para Long)
 
-    public Long getId() { // MUDANÇA 4
+    public Long getId() { 
         return id;
     }
 
-    public void setId(Long id) { // MUDANÇA 5
+    public void setId(Long id) { 
         this.id = id;
     }
 

@@ -2,7 +2,7 @@ package com.projetoweb.trabalhoapi.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import jakarta.persistence.Entity; // Garanta que todos os imports estão aqui
+import jakarta.persistence.Entity; 
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,8 +21,7 @@ public class AlunoEntity {
 
     private String nome;
 
-    // MUDANÇA 1: Adicionar o campo email
-    // O JPA vai criar automaticamente uma coluna "email" na tabela "aluno"
+
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,7 +30,7 @@ public class AlunoEntity {
     private TurmaEntity turma;
 
     
-    // --- Getters e Setters ---
+
     
     public Long getId() {
         return id;
@@ -49,7 +48,7 @@ public class AlunoEntity {
         this.nome = nome;
     }
 
-    // MUDANÇA 2: Adicionar getters e setters para o email
+
     public String getEmail() {
         return email;
     }

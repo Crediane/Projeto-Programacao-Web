@@ -3,17 +3,17 @@ package com.projetoweb.trabalhoapi.controller.dto;
 
 public class AlunoDto {
 
-    private Long id; // MUDANÇA 1: int para Long
+    private Long id; 
     private String nome;
     private String email;
 
-    // --- Getters e Setters ---
 
-    public Long getId() { // MUDANÇA 2
+
+    public Long getId() { 
         return id;
     }
 
-    public void setId(Long id) { // MUDANÇA 3
+    public void setId(Long id) { 
         this.id = id;
     }
 

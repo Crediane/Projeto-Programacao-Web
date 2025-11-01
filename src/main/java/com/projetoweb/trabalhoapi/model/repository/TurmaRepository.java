@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.projetoweb.trabalhoapi.model.entity.TurmaEntity;
 
 @Repository
-public interface TurmaRepository extends JpaRepository<TurmaEntity, Long> { // MUDANÇA: Integer para Long
+public interface TurmaRepository extends JpaRepository<TurmaEntity, Long> { 
 
     TurmaEntity findByNome(String nome);
 
